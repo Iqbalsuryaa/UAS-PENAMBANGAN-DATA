@@ -39,7 +39,7 @@ if (selected2 == 'Procecing data') :
 if (selected2 == 'Modelling'):
     st.title('Modelling')
 
-    pilih = st.radio('Pilih', ('Naive Bayes', 'Decision Tree', 'KNN', 'ANN'))
+    pilih = st.radio('Pilih', ('Naive Bayes', 'Decision Tree', 'KNN', 'MLP'))
 
     if (pilih == 'Naive Bayes'):
         st.title(' Nilai Akurasi 88%')
