@@ -42,13 +42,13 @@ if (selected2 == 'Modelling'):
     pilih = st.radio('Pilih', ('Naive Bayes', 'Decision Tree', 'KNN', 'ANN'))
 
     if (pilih == 'Naive Bayes'):
-        st.title(' Nilai Akurasi 100%')
+        st.title(' Nilai Akurasi 88%')
     elif (pilih == 'Decision Tree'):
-        st.title(' Nilai Akurasi 100%')
+        st.title(' Nilai Akurasi 87%')
     elif (pilih == 'KNN'):
-        st.title(' Nilai Akurasi 100%')
-    elif (pilih == 'ANN'):
-        st.title(' Nilai Akurasi 100%')
+        st.title(' Nilai Akurasi 85%')
+    elif (pilih == 'MLP'):
+        st.title(' Nilai Akurasi 87%')
 
 
 #halaman implementasi
