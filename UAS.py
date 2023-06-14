@@ -55,5 +55,10 @@ if (selected2 == 'Modelling'):
 # Load the saved model
 if (selected2 == 'Implementasi'):
     st.title('Implementasi')
-    if (selected2 == 'Implementasi'):
-    st.title('Implementasi')
+    
+    
+
+    
+
+
+    
