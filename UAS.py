@@ -57,7 +57,7 @@ if (selected2 == 'Implementasi'):
     st.title('Implementasi')
     if (selected2 == 'Implementasi'):
     st.title('Implementasi')
-    
+          
 import streamlit as st
 import pandas as pd
 import numpy as np
