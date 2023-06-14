@@ -63,32 +63,38 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 
 # Load data
-df = pd.read_csv("gender_classification_v7_oke.csv")
+df = pd.read_csv("preprocessed_data.csv")
 
 # Preprocessing data
-Gen_wanita = "Female"
-Gen_pria = "Male"
-value_one = 1
-value_zero = 0
+from sklearn.preprocessing import StandardScaler
+X_std=StandardScaler().fit_transform(X)
+X_std
 
-def change_gender_to_binary(gender):
-    return value_one if gender == Gen_pria else value_zero
-
-# Update kolom 'gender'
-df["gender"] = df["gender"].apply(change_gender_to_binary)
-
-X = df.iloc[:, :6].values
-y = df['long_hair'].values
-
-sc = StandardScaler()
-X = sc.fit_transform(X)
+df_std = pd.DataFrame(X_std, columns=genderv7.columns[:6])
+df_std.to_csv('preprocessed_data.csv', index=False)
 
 # Split data menjadi train set dan test set
+from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.05, random_state=42)
 
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
+
 # Model Naive Bayes
+from sklearn.naive_bayes import GaussianNB
 classifier = GaussianNB()
 classifier.fit(X_train, y_train)
+
+y_pred = classifier.predict(X_test)
+y_pred
+
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
+from sklearn.metrics import accuracy_score
+print ("Accuracy : ", accuracy_score(y_test, y_pred))
+cm
 
 # Fungsi untuk memprediksi hair length
 def predict_hair_length(gender, forehead_width_cm, forehead_height_cm, nose_wide, nose_long, lips_thin, distance_nose_to_lip_long):
