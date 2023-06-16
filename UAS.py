@@ -14,10 +14,11 @@ selected2
 
 #halaman Data
 if (selected2 == 'Data') :
-    st.title('deskripsi data')
+    st.title('Deskripsi data')
 
     st.write("Ini adalah contoh data yang tersedia dalam aplikasi Streamlit.")
     st.write("Data ini berisikan informasi mengenai pria dan wanita, yang bertujuan untuk mengetahui memiliki rambut yang panjang atau tidak.")
+    st.write("Penjelasan Tipe Data : Gender : wanita atau pria, yang Merupakan type data Kategorial yang nantinya akan kita ubah ke type data biner, dengan nilai value 1 untuk wanita dan value 0 untuk pria. dahi_lebar_cm : lebar dahi dari kanan ke kiri diberikan dalam ukuran cm. Merupakan type data Numeric dahi_tinggi_cm : lebar dahi lebar dalam ukuran cm dari tempat rambut tumbuh ke alis. Merupakan type data Numeric. Apakah memiliki hidung yang lebar atau tidak : 1 mewakili lebar dan 0 tidak. Merupakan Type data biner. Apakah memiliki hidung yang panjang atau tidak : 1 mewakili panjang dan 0 tidak. Merupakan Type data biner. Apakah orang ini memiliki bibir yang tipis atau tidak : 1 mewakili kurus dan 0 tidak. Apakah jarak dari hidung ke bibir panjang : 1 mewakili ya dan 0 tidak. Menunjukkan apakah orang tersebut berambut panjang atau tidak : 1 adalah  rambut panjang  dan 0 adalah  rambut tidak panjang")
     st.write("Data ini diambil dari kaggle")
     st.write("Data ini merupakan type data Numerik")
     data = pd.read_csv('gender_classification_v7_oke.csv')
@@ -92,6 +93,6 @@ def main():
         st.write("Hasil Prediksi:", result)
 
 if __name__ == "__main__":
-    main()
+        main()
 
     
